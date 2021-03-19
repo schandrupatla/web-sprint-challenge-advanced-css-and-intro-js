@@ -208,15 +208,18 @@ Practice accessing data above by console.log-ing following items:
 (no functions needed) */
 
 //(1) Name of the first artist (0th index) in the array
+  console.log("Task-1.1-Name : " + artists[0].name);
 
 
 //(2) Bio of the third artist (2nd index) in the array 
-
+console.log("Task-1.2-bio : " + artists[2].bio);
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 (no function needed) 
 There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Use an array method to fix this issue and console.log() to check your work. */
+artists.push(artists[8].name = "Vincent Van Gogh");
+console.log("Task-2 : " + artists[8].name);
 
 
 
@@ -228,9 +231,12 @@ There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is current
  
  Example, if getArtistByIndex is invoked with the artists array and the number 0, it will return `the artist at index 0 is Amedeo Modigliani` */
 
-function getArtistByIndex(/*Your Code Here*/) {
-  /*Your Code Here*/
+function getArtistByIndex(myArray,index) {
+  console.log("Task-3 : " + `the artist at index ${index} is ${myArray[index].name}`);
+  return `the artist at index ${index} is ${myArray[index].name}`
 }  
+getArtistByIndex(artists,6)
+
 
 
 
@@ -242,10 +248,30 @@ Use get20s to do the following:
 Example born in 1901 and died in 1959 - included -- born in 1889 and died in 1925 not included
 If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 
-function get20s(/*Your Code Here*/){
-  /*Your Code Here*/
-}
+function get20s(myArray){
+  let newArray = [];
+  let namesArray = [];
+ //Using filter method
+//   newArray = myArray.filter((myArray) => myArray.years > "1900");
+//   for(let i=0; i < newArray.length; i++){ 
+//     namesArray.push(newArray[i].name);
+   
+//  }
+//     console.log("Task-4 :", namesArray);
+//     return namesArray;
+//   }
+//   get20s(artists);
 
+
+//Using include method
+  for(let i=0; i < myArray.length; i++){ 
+    if(myArray[i].years > "1900")
+    namesArray.push(myArray[i].name);
+ }
+    console.log("Task-4 :", namesArray);
+    return namesArray;
+  }
+  get20s(artists);
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -257,9 +283,14 @@ function get20s(/*Your Code Here*/){
  
  For example, if removeArtist is invoked with the artists array and the number 0, it will remove Amedeo Modigliani from our dataset and return the number 19. */
 
-function removeArtist(/*Your Code Here*/){
-   /*Your Code Here*/
+function removeArtist(myArray, index){
+  let newArray = [];
+  newArray = myArray.splice(index,1);
+  console.log("Task-5:" , myArray.length);
+  return myArray.length;
+  
 }
+ removeArtist(artists,0);
    
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -278,8 +309,18 @@ Use addArtist to do the following:
 
 Example: addArtist(artists) should return the artists array with the above object added to the end of the array. */
 
-function addArtist(/*Your Code Here*/){
-    /*Your Code Here*/
+function addArtist(myArray){
+    const newArtist = {
+      id: 20,
+      name: "sridevi", 
+      years: "1976 - Jun 29",
+      genre: "Web Design", 
+      nationality: "Indian",
+      bio: "Lorem ipsum dolor sit amet, usu sint menandri dignissim id." 
+    }
+    myArray.push(newArtist);
+    //console.log("Task-6 : " , myArray);
+    return myArray;
   }
 
   
@@ -291,10 +332,17 @@ Use lotsOfArt to do the following:
 
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ... "Albrecht Dürer"]*/
 
-function lotsOfArt(/*Your Code Here*/){
-  /*Your Code Here*/
+function lotsOfArt(myArray){
+  let newArray =[];
+  for(let i=0; i < myArray.length; i++){
+    if(myArray[i].paintings > 100){
+      newArray.push(myArray[i].name);
+    }
+  }
+  console.log("Task-7:",newArray);
+  return newArray;
 }
-
+lotsOfArt(artists);
 
 
 
@@ -319,6 +367,17 @@ Create a function called `getHTML()` that takes the parameter `data` and uses a 
 The function should console.log 50 chunks of HTML code that match the structure above. 
 
 ‼️ You do **NOT** need to get these to display on your page, but you can copy and paste the result into your HTML file if you'd like to see what that would look like. */
+
+console.log (`<div id="artist"`);
+console.log(`<div class="image">`);
+console.log(`<img src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/starry-night-by-vincent-van-gogh-vincent-van-gogh.jpg"/>`);
+console.log(`</div>`);
+console.log(`<div class = "name">`);
+console.log(`<a href="https://en.wikipedia.org/wiki/Vincent_van_Gogh"> Vincent Van Gogh</a>`);
+console.log(`</div>`);
+console.log (`<div class = "bio">Vincent Willem van Gogh (Dutch: [ˈvɪnsɛnt ˈʋɪləm vɑŋ ˈɣɔx] (listen); 30 March 1853 – 29 July 1890) was a Dutch Post-Impressionist painter who is among the most famous and influential figures in the history of Western art. In just over a decade he created about 2,100 artworks, including around 860 oil paintings, most of them in the last two years of his life. They include landscapes, still lifes, portraits and self-portraits, and are characterised by bold colours and dramatic, impulsive and expressive brushwork that contributed to the foundations of modern art. However, he was not commercially successful, and his suicide at 37 followed years of mental illness and poverty.</div>`);
+console.log(`</div>`);
+
 
 function getHTML(/* Code here */){
 
