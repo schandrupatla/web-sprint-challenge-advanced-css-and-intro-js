@@ -368,38 +368,45 @@ The function should console.log 50 chunks of HTML code that match the structure 
 
 ‼️ You do **NOT** need to get these to display on your page, but you can copy and paste the result into your HTML file if you'd like to see what that would look like. */
 
-console.log (`<div id="artist"`);
-console.log(`<div class="image">`);
-console.log(`<img src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/starry-night-by-vincent-van-gogh-vincent-van-gogh.jpg"/>`);
-console.log(`</div>`);
-console.log(`<div class = "name">`);
-console.log(`<a href="https://en.wikipedia.org/wiki/Vincent_van_Gogh"> Vincent Van Gogh</a>`);
-console.log(`</div>`);
-console.log (`<div class = "bio">Vincent Willem van Gogh (Dutch: [ˈvɪnsɛnt ˈʋɪləm vɑŋ ˈɣɔx] (listen); 30 March 1853 – 29 July 1890) was a Dutch Post-Impressionist painter who is among the most famous and influential figures in the history of Western art. In just over a decade he created about 2,100 artworks, including around 860 oil paintings, most of them in the last two years of his life. They include landscapes, still lifes, portraits and self-portraits, and are characterised by bold colours and dramatic, impulsive and expressive brushwork that contributed to the foundations of modern art. However, he was not commercially successful, and his suicide at 37 followed years of mental illness and poverty.</div>`);
-console.log(`</div>`);
 
 
-function getHTML(/* Code here */){
 
-    /* Code here */
+function getHTML(data){
+
 
   }
 
 
 /* 💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪
 Create a function called `randomize` that takes a data array as an argument and returns a the same array in a randomized order. */
-
-function randomize(/* Code here */){
-
-    /* Code here */
-
+let dataorg = [0,1,2,3,4,5];
+function randomize(data){
+  for(let i =data.length-1; i > 0; i--){
+    let j = Math.floor(Math.random() * (i+1));
+    let temp =  data[i];
+    data[i] = data[j];
+    data[j] = temp;
+  }
+  console.log("Task-Stretch-2:",data);
+  return data;
   }
 
+  randomize(dataorg);
 
  /* 💪💪💪💪💪💪 STRETCH 3: 💪💪💪💪💪💪
  Use advanced array methods (.map, .reduce, .filer) to refactor your MVP code (create an array of all artists born in the 1900s with .filter, for example) */
 
- 
+ //Using filter method
+function advancedMethods(myArray){
+  let newArray = [];
+  let namesArray = [];
+  newArray = myArray.filter((myArray) => myArray.years > "1900");
+  for(let i=0; i < newArray.length; i++){ 
+    namesArray.push(newArray[i].name); 
+  }
+    console.log("Task-STRETCH-3 :", namesArray);
+  }
+  advancedMethods(artists);
  
  
  /* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑*/
