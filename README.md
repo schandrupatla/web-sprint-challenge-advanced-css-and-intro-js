@@ -24,9 +24,22 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Please answer the following questions below, you may edit the readme file to include your answers below the question.
 
 1. How would you describe acessibility on the web to someone new to programming?
-2. Talk about 3 different things you can do to ensure your website is accessible. 
+    Accessibility is the practice of making websites usable by as many people as possible
+    Semantic HTML, which improves accessibility, also improves SEO, making your site more findable.
+    Caring about accessibility demonstrates good ethics and morals, which improves your public image.
+    Other good practices that improve accessibility also make your site more usable by other groups, such as visually impaired, mobile phone users or those on low network speed. In fact, everyone can benefit from many such improvements.
+2. Talk about 3 different things you can do to ensure your website is accessible.
+    1. Semantic HTML and good semantics :Using semenatic tags, make your code more readable for the other developers. 
+    2. Text alternatives: writing "alt" text in the <img> tag helps people with visually impaired. 
+    3. Using right color combinations and contrasts for font, background colors and images for color blind people.
 3. How would you explain the concept of a variable to someone new to programming?
+    Variables are containers for storing data. They are identified with unique names.
+    They can be declared using 3 different key words in javascript. Const, Let and Var.
+    Const is mostly recommened unless can not be used, followed by let and then var.
+    const and let has block level scope and var has function levl scope.
+    var can be redeclared but const and let can not be redeclared. Const can not be reassigned.
 4. What is the purpose of using functions in code?
+    Functions are reusable block of code. Once declared , we can call it several times passing the arguments. Avoids code repetition, reduces chances of errors, divides a complex problem into simpler ones, makes program more readable and neat.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade. 
 
